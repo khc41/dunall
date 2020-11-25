@@ -10,7 +10,7 @@ router.post('/', async (req, res, _) => {
         res.send('error 0');
     
     let url = 'servers/'+ serverId +'/characters/'+characterId+'/status?';
-    var status = JSON.parse(await api(url, res))
+    var status = JSON.parse(await api(url))
     res.send(status)
 });
 module.exports = router

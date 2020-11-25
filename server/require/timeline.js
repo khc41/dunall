@@ -11,7 +11,7 @@ router.post('/', async (req, res, _) => {
         res.send('error 0');
     
     let url = 'servers/'+ serverId +'/characters/'+characterId+'/timeline?limit=20&code=504,505,506,507,508,511,513&';
-    var timeline = JSON.parse(await api(url, res))
+    var timeline = JSON.parse(await api(url))
     let data;
     var dataArray = new Array();
     timeline.timeline.rows.forEach(function(item){

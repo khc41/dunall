@@ -6,7 +6,7 @@ const qs = require('querystring');
 router.post('/', async (req, res, _) => {
     const characterId = req.body.characterId ? req.body.characterId : '';
     const serverId = req.body.serverId ? req.body.serverId : '';
-    console.log(characterId + serverId)
+    
     if(characterId == '' || serverId == '')
         res.send('error 0');
     let url = 'servers/' + serverId + '/characters/'+characterId+'?';

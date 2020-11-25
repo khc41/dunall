@@ -10,7 +10,7 @@ router.post('/', async (req, res, _) => {
         res.send('error 0');
     
     let url = 'servers/'+ serverId +'/characters/'+characterId+'/equip/creature?';
-    var creature = JSON.parse(await api(url, res))
+    var creature = JSON.parse(await api(url))
 
     let data;
     data = {
