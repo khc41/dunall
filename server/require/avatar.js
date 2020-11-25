@@ -22,6 +22,6 @@ router.post('/', async (req, res, _) => {
         }
         dataArray.push(data)
     })
-    res.send(dataArray)
+    res.send(avatar)
 });
 module.exports = router
