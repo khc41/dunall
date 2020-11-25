@@ -23,6 +23,7 @@ app.use("/avatar", require('./require/avatar.js'));
 app.use("/creature", require('./require/creature.js'));
 app.use("/flag", require('./require/flag.js'));
 app.use("/talisman", require('./require/talisman.js'));
+app.use("/skillStyle", require('./require/skillStyle.js'));
 
 // error handler
 app.use(function(err, req, res, next) {
