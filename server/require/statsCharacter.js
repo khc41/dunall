@@ -3,26 +3,14 @@ const router = express.Router();
 const api = require('./api.js')
     
 router.post('/', async (req, res, _) => {
-    const nickname = req.body.nickname ? req.body.nickname : '';
-    if(nickname == '')
-        res.send('error 0');
-    let url = 'servers/all/characters?&wordType=full&characterName='+qs.escape(nickname)+'&';
-    const characterInfo = JSON.parse(await api(url))
+    const serverId = req.body.serverId ? req.body.serverId : '';
+    const characterId = req.body.characterId ? req.body.characterId : '';
 
-    let data;
-    var dataArray = new Array();
-    characterInfo.rows.forEach(function(item){
-        data = {
-            characterName : item.characterName,
-            characterId : item.characterId,
-            serverId : server[item.serverId],
-            level : item.level,
-            jobName : item.jobName,
-            jobGrowName : item.jobGrowName
-        }
-        dataArray.push(data)
-    })
-    res.send(dataArray)
+    if(characterId == '' || serverId == '')
+        res.send('error 0');
+    
+    let url = 'servers/'+ serverId +'/characters/'+characterId+'/status?';
+    var status = JSON.parse(await api(url, res))
+    res.send(status)
 });
 module.exports = router
-

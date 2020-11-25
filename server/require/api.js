@@ -12,6 +12,7 @@ module.exports = async function(url) {
 
     await request(options, function (error, res, body) {
         if (error) throw new Error(error);
+        console.log(res)
         obj = body
     });
     return obj
