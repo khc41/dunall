@@ -18,6 +18,8 @@ app.use("/basicInfoCharacter", require('./require/basicInfoCharacter.js'));
 app.use("/showImage", require('./require/showImage.js'));
 app.use("/timeline", require('./require/timeline.js'));
 app.use("/statsCharacter", require('./require/statsCharacter.js'));
+app.use("/equip", require('./require/equip.js'));
+app.use("/avatar", require('./require/avatar.js'));
 
 // error handler
 app.use(function(err, req, res, next) {
