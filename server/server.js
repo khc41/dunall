@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.get('/', function(req,res){ res.render('index', {}); });
 app.use("/searchCharacter", require('./require/searchCharacter.js'));
-app.use("/InqueryCharacter", require('./require/InqueryCharacter.js'));
+app.use("/basicInfoCharacter", require('./require/basicInfoCharacter.js'));
 app.use("/showImage", require('./require/showImage.js'));
 app.use("/timeline", require('./require/timeline.js'));
 
