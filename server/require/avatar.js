@@ -12,22 +12,16 @@ router.post('/', async (req, res, _) => {
     let url = 'servers/'+ serverId +'/characters/'+characterId+'/equip/avatar?';
     var avatar = JSON.parse(await api(url, res))
 
-    // let data;
-    // var dataArray = new Array();
-    // equip.equipment.forEach(function(item){
-    //     data = {
-    //         itemImage : 'https://img-api.neople.co.kr/df/items/'+ item.itemId,
-    //         itemName : item.itemName,
-    //         itemType : item.itemType,
-    //         itemTypeDetail: item.itemTypeDetail,
-    //         enchant : item.enchant,
-    //         reinforce: item.reinforce,
-    //         amplification: item.amplificationName,
-    //         refine: item.refine,
-    //         mythologyInfo : item.mythologyInfo
-    //     }
-    //     dataArray.push(data)
-    // })
-    res.send(avatar)
+    let data;
+    var dataArray = new Array();
+    avatar.avatar.forEach(function(item){
+        data = {
+            itemName: item.itemName,
+            emblem1: item.emblems[0] ? item.emblems[0].itemName : '',
+            emblem2: item.emblems[1] ? item.emblems[1].itemName : ''
+        }
+        dataArray.push(data)
+    })
+    res.send(dataArray)
 });
 module.exports = router
