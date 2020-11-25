@@ -1,7 +1,5 @@
 const express = require('express');
 const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
@@ -10,13 +8,15 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
 app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', function(req,res){ res.render('index', {}); });
+app.use("/searchCharacter", require('./require/searchCharacter.js'));
+app.use("/InqueryCharacter", require('./require/InqueryCharacter.js'));
+app.use("/showImage", require('./require/showImage.js'));
+app.use("/timeline", require('./require/timeline.js'));
 
 // error handler
 app.use(function(err, req, res, next) {
