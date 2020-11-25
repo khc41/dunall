@@ -22,6 +22,7 @@ app.use("/equip", require('./require/equip.js'));
 app.use("/avatar", require('./require/avatar.js'));
 app.use("/creature", require('./require/creature.js'));
 app.use("/flag", require('./require/flag.js'));
+app.use("/talisman", require('./require/talisman.js'));
 
 // error handler
 app.use(function(err, req, res, next) {
