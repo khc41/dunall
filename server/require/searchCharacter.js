@@ -6,6 +6,7 @@ const server = require('./getServer.js');
     
 router.post('/', async (req, res, _) => {
     const nickname = req.body.nickname ? req.body.nickname : '';
+    console.log(nickname)
     if(nickname == '')
         res.send('error 0');
     let url = 'servers/all/characters?&wordType=full&characterName='+qs.escape(nickname)+'&';
