@@ -25,7 +25,6 @@ router.post('/', async (req, res, _) => {
     let avatars = new Array()
     let creature
     let emblem
-    let emblems = new Array()
 
     buffItem.skill.buff.equipment.forEach(function(item){
         equipment = {

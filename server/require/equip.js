@@ -24,10 +24,11 @@ router.post('/', async (req, res, _) => {
             reinforce: item.reinforce,
             amplification: item.amplificationName,
             refine: item.refine,
+            itemGradeName: item.itemGradeName,
             mythologyInfo : item.mythologyInfo
         }
         dataArray.push(data)
     })
-    res.send(dataArray)
+    res.send(data)
 });
 module.exports = router
