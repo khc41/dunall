@@ -12,7 +12,7 @@ router.post('/', async (req, res, _) => {
     if(characterId == '' || serverId == '')
         res.send('error 0');
     let url = 'servers/' + serverId + '/characters/'+qs.escape(characterId)+'?zoom=2';
-    imageUrl = server+url+apiKey
+    imageUrl = server+url
     res.send(imageUrl)
 });
 module.exports = router
