@@ -11,7 +11,7 @@ router.post('/', async (req, res, _) => {
     var imageUrl
     if(characterId == '' || serverId == '')
         res.send('error 0');
-    let url = 'servers/' + serverId + '/characters/'+qs.escape(characterId)+'?zoom=1';
+    let url = 'servers/' + serverId + '/characters/'+qs.escape(characterId)+'?zoom=2';
     imageUrl = server+url+apiKey
     res.send(imageUrl)
 });
