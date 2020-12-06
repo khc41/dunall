@@ -19,7 +19,8 @@ router.post('/', async (req, res, _) => {
             itemImage: 'https://img-api.neople.co.kr/df/items/'+ item.itemId,
             itemName: item.itemName,
             emblem1: item.emblems[0] ? item.emblems[0].itemName : '',
-            emblem2: item.emblems[1] ? item.emblems[1].itemName : ''
+            emblem2: item.emblems[1] ? item.emblems[1].itemName : '',
+            clone: item.clone.itemName
         }
         dataArray.push(data)
     })

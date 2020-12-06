@@ -25,9 +25,9 @@ router.post('/', async (req, res, _) => {
         gems.push(gem)
     })
     data = {
-        itemImage: 'https://img-api.neople.co.kr/df/items/'+ flag.itemId,
-        itemName: flag.itemName,
-        itemAbility: flag.itemAbility,
+        itemImage: 'https://img-api.neople.co.kr/df/items/'+ flag.flag.itemId,
+        itemName: flag.flag.itemName,
+        itemAbility: flag.flag.itemAbility,
         gem1: gems[0],
         gem2: gems[1],
         gem3: gems[2],
