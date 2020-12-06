@@ -20,6 +20,7 @@ router.post('/', async (req, res, _) => {
             itemName : item.itemName,
             itemType : item.itemType,
             itemTypeDetail: item.itemTypeDetail,
+            itemRarity: item.itemRarity,
             enchant : item.enchant,
             reinforce: item.reinforce,
             amplification: item.amplificationName,
